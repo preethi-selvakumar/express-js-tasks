@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini Project 2: Static File Server</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            background-color: #e9f5ff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #2a5d84;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #2a5d84;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        #msg {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Welcome to My Simple Web Page!</h1>
+    <p>This page is served from a static folder using <code>Express.js</code>.</p>
+
+    <button onclick="displayGreeting()">Get Greeting</button>
+    <p id="msg"></p>
+
+    <script>
+        function displayGreeting() {
+            document.getElementById('msg').textContent = "Thanks for visiting! Have a great day..";
+        }
+    </script>
+</body>
+
+</html>

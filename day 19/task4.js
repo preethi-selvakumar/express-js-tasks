@@ -1,0 +1,28 @@
+const express = require('express');
+const cors = require('cors');
+
+const app = express();
+const PORT = 3000;
+
+const allowedOrigins = ['http://example.com', 'http://localhost:4000'];
+
+const corsOptions = {
+    origin: function (origin, callback) {
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        }
+        else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    }
+};
+
+app.use(cors(corsOptions));
+
+app.get('/', (req, res) => {
+    res.send('CORS enabled for multiple specific origins');
+});
+
+app.listen(PORT, () => {
+    console.log(`Server running at http://localhost:${PORT}`);
+});
